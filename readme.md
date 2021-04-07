@@ -9,16 +9,16 @@ Insider version downloaded from UUP dump.
 **For obvious reasons this script will never support integration of Cumulative
 Updates to created images.**
 
-### Usage
+ Usage
 ```
 ./convert.sh [compression] [uups_directory] [create_virtual_editions]
 ```
 
-###### compression options:
+ compression options:
  * wim - standard wim compression (`/Compress:max` in DISM) (default)
  * esd - solid esd compression (`/Compress:recovery` in DISM)
 
-###### create_virtual_editions options:
+ create_virtual_editions options:
  * 0 - do not create virtual editions (default)
  * 1 - create virtual edtitions
 
@@ -36,7 +36,7 @@ Updates to created images.**
    directory, creates virtual editions and creates an ISO image with
    `install.wim`
 
-### Virtual editions
+ Virtual editions
 Since version 0.5.0 this script supports creation of virtual editions.
 To run creation of all virtial editions simply use create_virtual_editions
 switch in command line. If you want to customize which editions will be created
@@ -48,20 +48,20 @@ the same directory as converter.
 Thanks to abbodi1406 for providing informations which helped with creating this
 option.
 
-### Configuration file
+ Configuration file
 Configuration of advanced script options can be modified using
 the file `convert_config_linux` (on Linux) or `convert_config_macos` (on macOS).
 
-###### Configuration options
+ Configuration options
 ```
 VIRTUAL_EDITIONS_LIST='space delimited editions sequence'
 ```
 
-###### Configuration options explanation
+ Configuration options explanation
  * VIRTUAL_EDITIONS_LIST - configures which editions will be created when
    create_virtual_editions is enabled.
 
-### Requirements
+ Requirements
 This script uses the following commands to do its work:
  * cabextract - to extract cabs
  * wimlib-imagex - to export files from metadata ESD
@@ -79,7 +79,7 @@ sudo apt-get install cabextract wimtools chntpw genisoimage
 If you use any other distribution, then you will need to check its repository
 for packages needed to run this script.
 
-###### macOS
+ macOS
 macOS requires [Homebrew](https://brew.sh) to install the prerequisite software.
 After Homebrew was installed, you can install the requirements using:
 
